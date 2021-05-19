@@ -11,7 +11,7 @@ import Copyright from "../src/Copyright";
 export default function Index() {
   return (
     <div>
-      <h1>Welcome to Next</h1>
+      <h1>Welcome to Mariposa Wellness!</h1>
     </div>
   );
 }

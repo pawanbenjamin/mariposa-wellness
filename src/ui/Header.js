@@ -64,6 +64,9 @@ const useStyles = makeStyles((theme) => ({
   },
   tab: {
     ...theme.typography.tab,
+    "&:hover": {
+      textDecoration: "none",
+    },
     minWidth: 10,
     marginLeft: "25px",
   },
@@ -75,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
     height: "45px",
   },
   menu: {
-    backgroundColor: theme.palette.common.blue,
+    backgroundColor: theme.palette.primary.main,
     color: "white",
   },
   menuItem: {
@@ -86,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   drawer: {
-    backgroundColor: theme.palette.common.blue,
+    backgroundColor: theme.palette.primary.main,
     "& .MuiListIetmText-root": {
       opacity: 1,
     },
@@ -105,10 +108,10 @@ const useStyles = makeStyles((theme) => ({
     ...theme.typography.tab,
     opacity: 0.7,
   },
-  drawerItemEstimate: {
-    backgroundColor: theme.palette.common.orange,
-    borderRadius: "30px",
-  },
+  // drawerItemEstimate: {
+  //   backgroundColor: theme.palette.common.orange,
+  //   borderRadius: "30px",
+  // },
   drawerItemSelected: {
     opacity: 1,
   },
@@ -131,10 +134,11 @@ export default function Header(props) {
   const [openMenu, setOpenMenu] = useState(false);
 
   const menuOptions = [
-    { name: "Media", link: "/media" },
-    { name: "Photos", link: "/photos" },
-    { name: "Videos", link: "/videos" },
-    { name: "Socialmedia", link: "/socialmedia" },
+    { name: "Treatments", link: "/treatments" },
+    { name: "Core Synchronism", link: "/coreSynchronism" },
+    { name: "Viseral Manipulation", link: "/viseralManipulation" },
+    { name: "Pelic Floor", link: "/pelvicFloor" },
+    { name: "Prenatal / Postpartum Care", link: "/prePostCare" },
   ];
 
   useEffect(() => {
@@ -151,33 +155,33 @@ export default function Header(props) {
         }
         break;
 
-      case "/products":
+      case "/faq":
         if (value !== 2) {
           setValue(2);
         }
         break;
 
-      case "/media":
+      case "/treatments":
         if (value !== 3) {
           setValue(3);
           setSelectedIndex(0);
         }
         break;
-      case "/photos":
+      case "/coreSynchronism":
         if (value !== 4) {
           setValue(3);
           setSelectedIndex(1);
         }
         break;
 
-      case "/videos":
+      case "/viseralManipulation":
         if (value !== 5) {
           setValue(3);
           setSelectedIndex(2);
         }
         break;
 
-      case "/socialmedia":
+      case "/pelvicFloor":
         if (value !== 6) {
           setValue(3);
           setSelectedIndex(3);
@@ -195,7 +199,12 @@ export default function Header(props) {
           setValue(5);
         }
         break;
-
+      case "/prePostCare":
+        if (value !== 5) {
+          setValue(3);
+          setSelectedIndex(2);
+        }
+        break;
       default:
         break;
     }
@@ -228,20 +237,12 @@ export default function Header(props) {
         onChange={handleChange}
         className={classes.tabContainer}
       >
+        <Tab className={classes.tab} component={Link} href="/" label="Home" />
         <Tab
-        className={classes.tab} component={Link} href="/" label="Home"
-        />
-        <Tab
-        className={classes.tab}
-        component={Link}
-        href="/aboutus"
-        label="About Us"
-        />
-        <Tab
-        className={classes.tab}
-        component={Link}
-        href="/products"
-        label="Products"
+          className={classes.tab}
+          component={Link}
+          href="/aboutus"
+          label="About Us"
         />
         <Tab
           aria-owns={anchorEl ? "simple-menu" : undefined}
@@ -249,9 +250,11 @@ export default function Header(props) {
           onMouseOver={(e) => handleClick(e)}
           className={classes.tab}
           component={Link}
-          href="/media"
-          label="Media"
+          href="/treatments"
+          label="Treatments"
         />
+        <Tab className={classes.tab} component={Link} href="/faq" label="FAQ" />
+
         <Tab
           className={classes.tab}
           style={{
@@ -351,12 +354,12 @@ export default function Header(props) {
             }}
             button
             component={Link}
-            href="/products"
+            href="/treatments"
             selected={value === 2}
             classes={{ selected: classes.drawerItemSelected }}
           >
             <ListItemText className={classes.drawerItem} disableTypography>
-              Products
+              Treatments
             </ListItemText>
           </ListItem>
           <ListItem
@@ -366,12 +369,12 @@ export default function Header(props) {
             }}
             button
             component={Link}
-            href="/media"
+            href="/faq"
             selected={value === 3}
             classes={{ selected: classes.drawerItemSelected }}
           >
             <ListItemText className={classes.drawerItem} disableTypography>
-              Media
+              FAQ
             </ListItemText>
           </ListItem>
           <ListItem
@@ -389,7 +392,7 @@ export default function Header(props) {
               Contact Us
             </ListItemText>
           </ListItem>
-          <ListItem
+          {/* <ListItem
             className={classes.drawerItemEstimate}
             onClick={() => {
               setOpenDrawer(false);
@@ -407,7 +410,7 @@ export default function Header(props) {
             <ListItemText className={classes.drawerItem} disableTypography>
               Free Estimate
             </ListItemText>
-          </ListItem>
+          </ListItem> */}
         </List>
       </SwipeableDrawer>
       <IconButton

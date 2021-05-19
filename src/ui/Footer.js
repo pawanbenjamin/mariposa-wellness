@@ -83,12 +83,12 @@ export default function Footer(props) {
             <Grid container direction="column">
               <Grid
                 component={Link}
-                href="/products"
+                href="/faq"
                 item
                 className={classes.link}
                 onClick={() => setValue(2)}
               >
-                Products
+                FAQ
               </Grid>
             </Grid>
           </Grid>
@@ -96,7 +96,7 @@ export default function Footer(props) {
             <Grid container direction="column">
               <Grid
                 component={Link}
-                href="/media"
+                href="/treatments"
                 item
                 className={classes.link}
                 onClick={() => {
@@ -104,31 +104,7 @@ export default function Footer(props) {
                   setSelectedIndex(0);
                 }}
               >
-                Media
-              </Grid>
-              <Grid
-                component={Link}
-                href="/photos"
-                item
-                className={classes.link}
-                onClick={() => {
-                  setValue(2);
-                  setSelectedIndex(1);
-                }}
-              >
-                Photos
-              </Grid>
-              <Grid
-                component={Link}
-                href="/videos"
-                item
-                className={classes.link}
-                onClick={() => {
-                  setValue(2);
-                  setSelectedIndex(2);
-                }}
-              >
-                Videos
+                Treatments
               </Grid>
             </Grid>
           </Grid>

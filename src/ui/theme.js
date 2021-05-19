@@ -1,27 +1,29 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
-const pBlue = "#B3C0A4";
-const pOrgane = "#DCC48E";
+const green = "#B3C0A4";
+const purple = "#AB92BF";
 
 export default createMuiTheme({
   palette: {
     common: {
-      blue: `${pBlue}`,
-      orange: `${pOrgane}`,
+      blue: `${green}`,
+      orange: `${purple}`,
     },
     primary: {
-      main: `${pBlue}`,
+      main: `${green}`,
     },
     secondary: {
-      main: `${pOrgane}`,
+      main: `${purple}`,
     },
   },
+
   typography: {
+    fontFamily: "Newsreader, serif",
     tab: {
-      fontFamily: "Raleway",
       textTransform: "none",
-      fontWeight: 700,
+      fontWeight: 600,
       fontSize: "1rem",
+      textDecoration: "none",
     },
     estimate: {
       fontFamily: "Pacifico",
