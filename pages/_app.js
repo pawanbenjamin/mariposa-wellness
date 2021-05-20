@@ -1,16 +1,29 @@
 import React from "react";
 import { useState } from "react";
 
+// import "../styles/global.css";
+
 import Header from "../src/ui/Header";
 import Footer from "../src/ui/Footer";
 
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../src/ui/theme";
+import { CssBaseline } from "@material-ui/core";
+
+// import { makeStyles } from "@material-ui/core/styles";
+// import { useTheme } from "@material-ui/core/styles";
+
+// const useStyles = makeStyles((theme)=>({
+//     root: {
+
+//     }
+// }))
 
 export default function MyApp(props) {
+  // const theme = useTheme()
+  // const classes = useStyles()
   const { Component, pageProps } = props;
 
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -34,7 +47,6 @@ export default function MyApp(props) {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Header
           value={value}

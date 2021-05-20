@@ -18,10 +18,11 @@ export default createMuiTheme({
   },
 
   typography: {
-    fontFamily: "Newsreader, serif",
+    fontFamily: "Heebo, sans-serif",
+    fontWeight: 300,
     tab: {
       textTransform: "none",
-      fontWeight: 600,
+      fontWeight: 400,
       fontSize: "1rem",
       textDecoration: "none",
     },

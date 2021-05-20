@@ -40,9 +40,9 @@ const useStyles = makeStyles((theme) => ({
     // [theme.breakpoints.down("sm")]: {
     //   marginBottom: "3em",
     // },
-    [theme.breakpoints.down("xs")]: {
-      marginBottom: ".5em",
-    },
+    // [theme.breakpoints.down("xs")]: {
+    //   marginBottom: ".5em",
+    // },
   },
   logo: {
     // height: "8em",
@@ -155,13 +155,13 @@ export default function Header(props) {
         }
         break;
 
-      case "/faq":
+      case "/treatments":
         if (value !== 2) {
           setValue(2);
         }
         break;
 
-      case "/treatments":
+      case "/faq":
         if (value !== 3) {
           setValue(3);
           setSelectedIndex(0);
@@ -169,21 +169,21 @@ export default function Header(props) {
         break;
       case "/coreSynchronism":
         if (value !== 4) {
-          setValue(3);
+          setValue(2);
           setSelectedIndex(1);
         }
         break;
 
       case "/viseralManipulation":
         if (value !== 5) {
-          setValue(3);
+          setValue(2);
           setSelectedIndex(2);
         }
         break;
 
       case "/pelvicFloor":
         if (value !== 6) {
-          setValue(3);
+          setValue(2);
           setSelectedIndex(3);
         }
         break;
@@ -201,7 +201,7 @@ export default function Header(props) {
         break;
       case "/prePostCare":
         if (value !== 5) {
-          setValue(3);
+          setValue(2);
           setSelectedIndex(2);
         }
         break;

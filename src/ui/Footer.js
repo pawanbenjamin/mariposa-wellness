@@ -4,6 +4,8 @@ import Grid from "@material-ui/core/Grid";
 import Link from "../Link";
 import Hidden from "@material-ui/core/Hidden";
 
+import Copyright from "../Copyright";
+
 // import swirl from "../../assets/swirl.svg";
 
 const useStyles = makeStyles((theme) => ({
@@ -32,8 +34,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: ".3em",
   },
   link: {
+    fontFamily: "Heebo, sans-serif",
     fontSize: "0.75rem",
-    fontWeight: "bold",
+
     opacity: ".7",
     textDecoration: "none",
     color: "black",
