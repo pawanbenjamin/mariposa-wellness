@@ -45,13 +45,14 @@ const useStyles = makeStyles((theme) => ({
     // },
   },
   logo: {
-    // height: "8em",
-    // [theme.breakpoints.down("sm")]: {
-    //   height: "8em",
-    // },
-    // [theme.breakpoints.down("xs")]: {
-    //   height: "5em",
-    // },
+    height: "8em",
+    padding: "10px",
+    [theme.breakpoints.down("sm")]: {
+      height: "8em",
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: "5em",
+    },
   },
   logoContainer: {
     padding: 0,
@@ -437,7 +438,7 @@ export default function Header(props) {
             >
               <img
                 alt="company-logo"
-                src={swirl}
+                src="/mariposa.svg"
                 className={classes.logo}
               ></img>
             </Button> */}
