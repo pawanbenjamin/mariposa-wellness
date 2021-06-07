@@ -4,12 +4,14 @@ import Grid from "@material-ui/core/Grid";
 import Link from "../Link";
 import Hidden from "@material-ui/core/Hidden";
 
-import Copyright from "../Copyright";
+import { Typography } from "@material-ui/core";
 
 // import swirl from "../../assets/swirl.svg";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
+    display: "flex",
+    flexDirection: "column",
     backgroundColor: theme.palette.common.orange,
     width: "100%",
     height: "5em",
@@ -40,6 +42,12 @@ const useStyles = makeStyles((theme) => ({
     opacity: ".7",
     textDecoration: "none",
     color: "black",
+  },
+  copyright: {
+    fontFamily: "Heebo, sans-serif",
+    fontSize: "0.75rem",
+
+    marginLeft: "43%",
   },
 }));
 
@@ -127,6 +135,11 @@ export default function Footer(props) {
         </Grid>
       </Hidden>
       {/* <img alt="logo" src={swirl} className={classes.footerLogo} /> */}
+      <Grid container direction="column-reverse">
+        <Typography className={classes.copyright}>
+          © 2021 Mariposa Wellness
+        </Typography>
+      </Grid>
     </footer>
   );
 }
