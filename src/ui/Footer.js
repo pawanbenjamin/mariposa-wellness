@@ -5,6 +5,7 @@ import Link from "../Link";
 import Hidden from "@material-ui/core/Hidden";
 
 import { Typography } from "@material-ui/core";
+import Copyright from "../Copyright";
 
 // import swirl from "../../assets/swirl.svg";
 
@@ -14,12 +15,12 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     backgroundColor: theme.palette.common.orange,
     width: "100%",
-    height: "5em",
+    height: "6em",
     [theme.breakpoints.down("sm")]: {
-      height: "5em",
+      height: "6em",
     },
     [theme.breakpoints.down("xs")]: {
-      height: "5em",
+      height: "6em",
     },
   },
   footerLogo: {
@@ -37,17 +38,11 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     fontFamily: "Heebo, sans-serif",
-    fontSize: "0.75rem",
+    fontSize: ".8rem",
 
     opacity: ".7",
     textDecoration: "none",
     color: "black",
-  },
-  copyright: {
-    fontFamily: "Heebo, sans-serif",
-    fontSize: "0.75rem",
-
-    marginLeft: "43%",
   },
 }));
 
@@ -71,7 +66,10 @@ export default function Footer(props) {
                 href="/"
                 item
                 className={classes.link}
-                onClick={() => setValue(0)}
+                onClick={() => {
+                  setValue(0);
+                  setSelectedIndex(0);
+                }}
               >
                 Home
               </Grid>
@@ -84,25 +82,16 @@ export default function Footer(props) {
                 href="/aboutus"
                 item
                 className={classes.link}
-                onClick={() => setValue(1)}
+                onClick={() => {
+                  setValue(1);
+                  setSelectedIndex(1);
+                }}
               >
                 About Us
               </Grid>
             </Grid>
           </Grid>
-          <Grid item>
-            <Grid container direction="column">
-              <Grid
-                component={Link}
-                href="/faq"
-                item
-                className={classes.link}
-                onClick={() => setValue(2)}
-              >
-                FAQ
-              </Grid>
-            </Grid>
-          </Grid>
+
           <Grid item>
             <Grid container direction="column">
               <Grid
@@ -112,7 +101,7 @@ export default function Footer(props) {
                 className={classes.link}
                 onClick={() => {
                   setValue(2);
-                  setSelectedIndex(0);
+                  setSelectedIndex(2);
                 }}
               >
                 Treatments
@@ -123,23 +112,41 @@ export default function Footer(props) {
             <Grid container direction="column">
               <Grid
                 component={Link}
+                href="/faq"
+                item
+                className={classes.link}
+                onClick={() => {
+                  setValue(3);
+                  setSelectedIndex(3);
+                }}
+              >
+                FAQ
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item>
+            <Grid container direction="column">
+              <Grid
+                component={Link}
                 href="/contactus"
                 item
                 className={classes.link}
-                onClick={() => setValue(4)}
+                onClick={() => {
+                  setValue(4);
+                  setSelectedIndex(4);
+                }}
               >
                 Contact Us
               </Grid>
             </Grid>
           </Grid>
+          <Grid container justify="center">
+            <Copyright />
+          </Grid>
         </Grid>
       </Hidden>
+
       {/* <img alt="logo" src={swirl} className={classes.footerLogo} /> */}
-      <Grid container direction="column-reverse">
-        <Typography className={classes.copyright}>
-          © 2021 Mariposa Wellness
-        </Typography>
-      </Grid>
     </footer>
   );
 }

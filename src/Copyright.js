@@ -6,11 +6,10 @@ export default function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <MuiLink color="inherit" href="https://material-ui.com/">
+      <MuiLink color="inherit" href="https://mariposawellness.com/">
         Mariposa Wellness
-      </MuiLink>{" "}
+      </MuiLink>
       {new Date().getFullYear()}
-      {"."}
     </Typography>
   );
 }
