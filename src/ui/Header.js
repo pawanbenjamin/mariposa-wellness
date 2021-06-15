@@ -169,28 +169,28 @@ export default function Header(props) {
         }
         break;
       case "/coreSynchronism":
-        if (value !== 4) {
+        if (value !== 2) {
           setValue(2);
           setSelectedIndex(1);
         }
         break;
 
       case "/viseralManipulation":
-        if (value !== 5) {
+        if (value !== 2) {
           setValue(2);
           setSelectedIndex(2);
         }
         break;
 
       case "/pelvicFloor":
-        if (value !== 6) {
+        if (value !== 2) {
           setValue(2);
-          setSelectedIndex(3);
+          setSelectedIndex(2);
         }
         break;
 
       case "/contactus":
-        if (value !== 7) {
+        if (value !== 4) {
           setValue(4);
         }
         break;
@@ -201,7 +201,7 @@ export default function Header(props) {
         }
         break;
       case "/prePostCare":
-        if (value !== 5) {
+        if (value !== 2) {
           setValue(2);
           setSelectedIndex(2);
         }
