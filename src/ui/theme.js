@@ -26,7 +26,7 @@ export default createMuiTheme({
       fontSize: "1rem",
       textDecoration: "none",
     },
-    estimate: {
+    appointment: {
       fontFamily: "Pacifico",
       fontSize: "1rem",
       textTransform: "none",

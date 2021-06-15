@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-// import "../styles/global.css";
+import "../styles/global.css";
 
 import Header from "../src/ui/Header";
 import Footer from "../src/ui/Footer";

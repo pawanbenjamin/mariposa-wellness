@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     display: "flex",
     flexDirection: "column",
-    backgroundColor: theme.palette.common.orange,
+    backgroundColor: "transparent",
     width: "100%",
     height: "6em",
     [theme.breakpoints.down("sm")]: {
@@ -52,7 +52,7 @@ export default function Footer(props) {
 
   return (
     <footer className={classes.footer}>
-      <Hidden smDown>
+      <Hidden>
         <Grid
           container
           className={classes.mainContainer}

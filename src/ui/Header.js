@@ -72,15 +72,15 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "25px",
   },
   button: {
-    ...theme.typography.estimate,
-    borderRadius: "50px",
+    ...theme.typography.tab,
     marginRight: "25px",
-    marginLeft: "50px",
-    height: "45px",
+    marginLeft: "10px",
+    borderRadius: "25px",
+    background: "transparent",
   },
   menu: {
-    backgroundColor: theme.palette.primary.main,
-    color: "white",
+    // backgroundColor: theme.palette.primary.main,
+    // color: "white",
   },
   menuItem: {
     ...theme.typography.tab,
@@ -90,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   drawer: {
-    backgroundColor: theme.palette.primary.main,
+    // backgroundColor: theme.palette.primary.main,
     "& .MuiListIetmText-root": {
       opacity: 1,
     },
@@ -106,7 +106,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   drawerItem: {
-    ...theme.typography.tab,
+    // ...theme.typography.tab,
     opacity: 0.7,
   },
   // drawerItemEstimate: {
@@ -118,6 +118,7 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     zIndex: theme.zIndex.modal + 1,
+    background: "white",
   },
 }));
 
@@ -242,8 +243,8 @@ export default function Header(props) {
         <Tab
           className={classes.tab}
           component={Link}
-          href="/aboutus"
-          label="About Us"
+          href="/aboutMari"
+          label="About Mari"
         />
         <Tab
           aria-owns={anchorEl ? "simple-menu" : undefined}
@@ -266,7 +267,7 @@ export default function Header(props) {
           label="Contact Us"
         />
       </Tabs>
-      {/* <Button
+      <Button
         variant="contained"
         color="secondary"
         className={classes.button}
@@ -274,8 +275,8 @@ export default function Header(props) {
         // href="/estimate"
         // onClick={() => setValue(5)}
       >
-        Free Estimate
-      </Button> */}
+        Book Appointment
+      </Button>
       <Menu
         id="simple-menu"
         anchorEl={anchorEl}
@@ -340,12 +341,12 @@ export default function Header(props) {
             }}
             button
             component={Link}
-            href="/aboutus"
+            href="/aboutMari"
             selected={value === 1}
             classes={{ selected: classes.drawerItemSelected }}
           >
             <ListItemText className={classes.drawerItem} disableTypography>
-              About Us
+              About Mari
             </ListItemText>
           </ListItem>
           <ListItem
@@ -393,7 +394,7 @@ export default function Header(props) {
               Contact Us
             </ListItemText>
           </ListItem>
-          {/* <ListItem
+          <ListItem
             className={classes.drawerItemEstimate}
             onClick={() => {
               setOpenDrawer(false);
@@ -409,9 +410,9 @@ export default function Header(props) {
             }}
           >
             <ListItemText className={classes.drawerItem} disableTypography>
-              Free Estimate
+              Book App
             </ListItemText>
-          </ListItem> */}
+          </ListItem>
         </List>
       </SwipeableDrawer>
       <IconButton
@@ -427,23 +428,8 @@ export default function Header(props) {
   return (
     <>
       <ElevationScroll>
-        <AppBar className={classes.appBar} position="fixed" color="primary">
-          <Toolbar disableGutters>
-            {/* <Button
-              component={Link}
-              href="/"
-              disableRipple
-              className={classes.logoContainer}
-              onClick={() => setValue(0)}
-            >
-              <img
-                alt="company-logo"
-                src="/mariposa.svg"
-                className={classes.logo}
-              ></img>
-            </Button> */}
-            {matches ? drawer : tabs}
-          </Toolbar>
+        <AppBar className={classes.appBar} position="fixed" color="transparent">
+          <Toolbar disableGutters>{matches ? drawer : tabs}</Toolbar>
         </AppBar>
       </ElevationScroll>
       <div className={classes.toolbarMargin} />

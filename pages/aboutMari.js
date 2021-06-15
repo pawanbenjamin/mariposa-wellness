@@ -13,18 +13,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function aboutus(props) {
+function aboutMari(props) {
   const classes = useStyles();
   const theme = useTheme();
   return (
     <Container className={classes.main}>
       <Box my={4}>
         <Typography variant="h4" component="h1" gutterBottom>
-          About Us
+          About Mari
         </Typography>
       </Box>
     </Container>
   );
 }
 
-export default aboutus;
+export default aboutMari;
